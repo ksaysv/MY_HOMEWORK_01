@@ -1,13 +1,19 @@
-import random
+import turtle
+def move(s):
+    turtle.forward(s)
+    turtle.left(90)
+def draw_square(s):
+    for i in range(4):
+        move(s)
+def draw_squareColor(s, color):
+    turtle.color(color)
+    turtle.begin_fill()
+    for i in range(4):
+        move(s)
+    turtle.end_fill()
 
-number = random.randint(3, 20)
-print(number)
-pass_Colona_2 = []
-for i in range(1, number):
-        for j in range(i + 1, number):
-            if number % (i + j) == 0:
-                a = i,j
-                pass_Colona_2.append(a)
-            else:
-                continue
-print(pass_Colona_2)
+turtle.speed(1)
+
+draw_squareColor(60, 'blue')
+turtle.goto(150,150)
+draw_squareColor(120, 'red')
